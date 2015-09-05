@@ -1,0 +1,43 @@
+{
+  "name": "highlight-fragment.js",
+  "version": "0.0.0",
+  "description": "returns the sequence with highlighted fragment if the pattern matches, else just the sequence",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib/*",
+    "lint": "eslint test index.js",
+    "test": "node test/test.main.js | faucet",
+    "patch": "npm version patch && npm run build && npm publish",
+    "minor": "npm version minor && npm run build && npm publish",
+    "major": "npm version major && npm run build && npm publish",
+    "prebuild": "npm run clean && npm run lint & npm run test",
+    "build": "babel index.js --out-file lib/index.js",
+    "postpublish": "git push origin master --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meandmax/highlight-fragment.js.git"
+  },
+  "keywords": [
+    "string manipulation",
+    "highlight strings",
+    "html tag",
+    "es6"
+  ],
+  "author": "meandmax <info@maximimilian-heinz.de> (http://maximilian-heinz.de/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meandmax/highlight-fragment.js/issues"
+  },
+  "homepage": "https://github.com/meandmax/highlight-fragment.js",
+  "devDependencies": {
+    "babel": "latest",
+    "eslint": "latest",
+    "eslint-config-standard": "latest",
+    "eslint-plugin-standard": "latest",
+    "faucet": "latest",
+    "rimraf": "latest",
+    "tap-spec": "latest",
+    "tape": "latest"
+  }
+}

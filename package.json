@@ -1,6 +1,6 @@
 {
   "name": "highlight-fragment.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "returns the sequence with highlighted fragment if the pattern matches, else just the sequence",
   "main": "lib/index.js",
   "scripts": {
